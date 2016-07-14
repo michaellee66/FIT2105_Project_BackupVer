@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tRR-Ib-vxm">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="prato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5N6-WJ-MTl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="629"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P48-XC-iOX">
+                                <rect key="frame" x="242" y="480" width="30" height="30"/>
+                                <state key="normal" title="play"/>
+                                <connections>
+                                    <segue destination="QPN-RF-lnD" kind="show" identifier="showAudio" id="MR6-5Y-1fX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P48-XC-iOX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="108" id="EEb-2i-goI"/>
+                            <constraint firstItem="5N6-WJ-MTl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YAQ-Ob-q2o"/>
+                            <constraint firstAttribute="trailing" secondItem="5N6-WJ-MTl" secondAttribute="trailing" id="cb7-mQ-hyk"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5N6-WJ-MTl" secondAttribute="bottom" constant="-93" id="ghZ-RT-v72"/>
+                            <constraint firstItem="5N6-WJ-MTl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jhM-wN-BTx"/>
+                            <constraint firstAttribute="trailing" secondItem="P48-XC-iOX" secondAttribute="trailing" constant="209" id="wgV-S8-3Jm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="Fb8-aW-zeT"/>
+                    <connections>
+                        <outlet property="Mapview" destination="5N6-WJ-MTl" id="cas-2t-W3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-267" y="602"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5xa-Vf-aV1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tRR-Ib-vxm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JCa-Ct-o6d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m7k-3h-2yk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Em-iL-esi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203" y="-452"/>
+        </scene>
+        <!--Question-->
+        <scene sceneID="rm1-cS-sKP">
+            <objects>
+                <viewController id="cli-6m-dKP" customClass="InfoPageViewController" customModule="prato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Php-Ga-aPY"/>
+                        <viewControllerLayoutGuide type="bottom" id="NUZ-XC-ssM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kLj-Nz-4N7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTn-5c-tmR">
+                                <rect key="frame" x="223" y="472" width="30" height="30"/>
+                                <state key="normal" title="Yes"/>
+                                <connections>
+                                    <segue destination="gWw-cL-RRO" kind="show" id="gFs-Sz-C1O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMa-mJ-sm2">
+                                <rect key="frame" x="55" y="472" width="30" height="30"/>
+                                <state key="normal" title="No"/>
+                                <connections>
+                                    <segue destination="03w-1q-PJy" kind="show" id="Wig-wF-c0w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nX-gn-NCh">
+                                <rect key="frame" x="28" y="521" width="82" height="30"/>
+                                <state key="normal" title="Which gods"/>
+                                <connections>
+                                    <segue destination="e1O-f4-grv" kind="show" id="PG0-ly-8Bw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tell me, do you believe in the gods?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vup-yU-SVT">
+                                <rect key="frame" x="20" y="355" width="272" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghi-jw-T71">
+                                <rect key="frame" x="208" y="521" width="61" height="30"/>
+                                <state key="normal" title="Not Sure"/>
+                                <connections>
+                                    <segue destination="gOS-Zs-wVM" kind="show" id="18X-jD-vbx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="2we-9r-dDE">
+                                <rect key="frame" x="20" y="88" width="186" height="188"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Question" id="BrO-6l-ijx"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBH-5O-Viw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915" y="712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VvI-J9-ATX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D0k-KQ-yME" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4uB-g4-SeB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cli-6m-dKP" kind="relationship" relationship="rootViewController" id="eRL-Ro-Em1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIn-1F-qE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="-82"/>
+        </scene>
+        <!--q1_yes-->
+        <scene sceneID="dHa-uh-gIi">
+            <objects>
+                <viewController title="q1_yes" id="gWw-cL-RRO" customClass="q1_yes" customModule="prato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ToK-ph-Fdj"/>
+                        <viewControllerLayoutGuide type="bottom" id="sZ2-FQ-bWl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Myg-hA-XoH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HgI-tK-E5P">
+                                <rect key="frame" x="20" y="81" width="230" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="7Fh-Rl-hG8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dny-oH-EyY">
+                                <rect key="frame" x="529" y="545" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="WQU-oL-pxw" kind="show" id="uE8-4z-woC"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tlt-3v-CPf">
+                                <rect key="frame" x="20" y="324" width="278" height="164"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="L1X-Ig-NZS"/>
+                                    <constraint firstAttribute="width" constant="409" id="utr-BM-eDF"/>
+                                </constraints>
+                                <string key="text">Hear me out, maybe this will change your mind..
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dny-oH-EyY" secondAttribute="trailing" constant="19" id="Gfc-hU-ZIk"/>
+                            <constraint firstItem="sZ2-FQ-bWl" firstAttribute="top" secondItem="Tlt-3v-CPf" secondAttribute="bottom" constant="47" id="LZU-kw-3dW"/>
+                            <constraint firstItem="Tlt-3v-CPf" firstAttribute="top" secondItem="HgI-tK-E5P" secondAttribute="bottom" constant="86" id="R90-9v-ppK"/>
+                            <constraint firstItem="HgI-tK-E5P" firstAttribute="leading" secondItem="Tlt-3v-CPf" secondAttribute="leading" id="i9c-ae-Pjc"/>
+                            <constraint firstItem="HgI-tK-E5P" firstAttribute="leading" secondItem="Myg-hA-XoH" secondAttribute="leadingMargin" id="ifA-Xu-3d5"/>
+                            <constraint firstItem="sZ2-FQ-bWl" firstAttribute="top" secondItem="dny-oH-EyY" secondAttribute="bottom" constant="25" id="k2a-fT-nic"/>
+                            <constraint firstItem="HgI-tK-E5P" firstAttribute="top" secondItem="ToK-ph-Fdj" secondAttribute="bottom" constant="17" id="zhR-q2-UP8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medusa's story" id="yhb-c6-cMe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaK-Uv-Bn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="2504"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="abP-Er-CaU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a77-l6-r6p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gsQ-Lz-B6u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gWw-cL-RRO" kind="relationship" relationship="rootViewController" id="qND-uQ-DPU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZX6-rD-d6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="1460"/>
+        </scene>
+        <!--q1_no-->
+        <scene sceneID="npY-bv-WVf">
+            <objects>
+                <viewController title="q1_no" id="03w-1q-PJy" customClass="q1_no" customModule="prato" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="stf-mu-EXu"/>
+                        <viewControllerLayoutGuide type="bottom" id="cg9-FG-tFa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0d3-J0-7k9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1oX-to-SNz">
+                                <rect key="frame" x="42" y="87" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0e4-OP-V0w"/>
+                                    <constraint firstAttribute="width" constant="240" id="3wJ-He-hcd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZp-9X-Mrf">
+                                <rect key="frame" x="541" y="550" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="WQU-oL-pxw" kind="show" id="gw9-Hx-gzq"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pJ8-V0-8PP">
+                                <rect key="frame" x="42" y="368" width="292" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="292" id="bWF-xT-gTv"/>
+                                    <constraint firstAttribute="height" constant="128" id="epf-VW-o3h"/>
+                                </constraints>
+                                <string key="text">I like the way you think, neither do I. And here’s why..
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1oX-to-SNz" firstAttribute="top" secondItem="stf-mu-EXu" secondAttribute="bottom" constant="23" id="3Vv-0D-TJe"/>
+                            <constraint firstItem="1oX-to-SNz" firstAttribute="leading" secondItem="0d3-J0-7k9" secondAttribute="leadingMargin" constant="22" id="5T4-eC-mif"/>
+                            <constraint firstItem="pJ8-V0-8PP" firstAttribute="leading" secondItem="0d3-J0-7k9" secondAttribute="leadingMargin" id="iOD-of-RWL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jZp-9X-Mrf" secondAttribute="trailing" constant="7" id="kbi-DM-qD5"/>
+                            <constraint firstItem="cg9-FG-tFa" firstAttribute="top" secondItem="pJ8-V0-8PP" secondAttribute="bottom" constant="53" id="pAw-Xi-bjR"/>
+                            <constraint firstAttribute="bottom" secondItem="jZp-9X-Mrf" secondAttribute="bottom" constant="20" symbolic="YES" id="rLf-Ap-2fV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medusa's story" id="ffx-F5-Md4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awH-si-bCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="2458"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eTE-HT-iXC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i8d-uG-nRJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TBl-fW-cFz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="03w-1q-PJy" kind="relationship" relationship="rootViewController" id="niz-0V-5v3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9q-CU-Dyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000" y="1685"/>
+        </scene>
+        <!--q1_which-->
+        <scene sceneID="NOL-Gl-zhw">
+            <objects>
+                <viewController title="q1_which" id="e1O-f4-grv" customClass="q1_which" customModule="prato" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cx6-Sa-NSm"/>
+                        <viewControllerLayoutGuide type="bottom" id="PaT-Vh-u8v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OVU-7h-ISY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bMZ-Zf-CRG">
+                                <rect key="frame" x="44" y="323" width="308" height="141"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="PBj-YQ-29n"/>
+                                </constraints>
+                                <string key="text">The Roman gods, throughout history they have been praised and looked upon favorably, of course people over look the evil they brought to in this world..
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ne5-WD-3R4">
+                                <rect key="frame" x="49" y="97" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Nro-CK-WTf"/>
+                                    <constraint firstAttribute="height" constant="128" id="U9c-Up-baU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5F-cO-dne">
+                                <rect key="frame" x="520" y="519" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="WQU-oL-pxw" kind="show" id="f1b-Ld-fgK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PaT-Vh-u8v" firstAttribute="top" secondItem="e5F-cO-dne" secondAttribute="bottom" constant="51" id="2of-mk-731"/>
+                            <constraint firstItem="PaT-Vh-u8v" firstAttribute="top" secondItem="bMZ-Zf-CRG" secondAttribute="bottom" constant="136" id="66A-Yw-ddA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e5F-cO-dne" secondAttribute="trailing" constant="28" id="ElX-Z6-zkb"/>
+                            <constraint firstItem="ne5-WD-3R4" firstAttribute="leading" secondItem="OVU-7h-ISY" secondAttribute="leadingMargin" constant="29" id="Oy9-4m-TBN"/>
+                            <constraint firstItem="bMZ-Zf-CRG" firstAttribute="leading" secondItem="OVU-7h-ISY" secondAttribute="leadingMargin" constant="24" id="Rjd-Fv-ctU"/>
+                            <constraint firstItem="bMZ-Zf-CRG" firstAttribute="top" secondItem="ne5-WD-3R4" secondAttribute="bottom" constant="98" id="jV5-EZ-vE1"/>
+                            <constraint firstItem="ne5-WD-3R4" firstAttribute="top" secondItem="cx6-Sa-NSm" secondAttribute="bottom" constant="33" id="nMC-VM-4id"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medusa's story" id="9BE-mJ-BoD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kKT-Xa-pZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3148" y="2378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EsZ-iY-HAS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fLy-Gx-jbp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="row-KZ-bch">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e1O-f4-grv" kind="relationship" relationship="rootViewController" id="N9A-91-gDr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWt-nE-Xh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3170" y="1536"/>
+        </scene>
+        <!--Intro-->
+        <scene sceneID="pwa-d8-U6D">
+            <objects>
+                <viewController title="Intro" id="QPN-RF-lnD" customClass="Intro" customModule="prato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="58g-ui-ON9"/>
+                        <viewControllerLayoutGuide type="bottom" id="NHY-OY-SU2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="31B-dl-D18">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gv3-E6-sYw">
+                                <rect key="frame" x="34" y="72" width="276" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="D45-pQ-7jC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM3-RB-y2a">
+                                <rect key="frame" x="504" y="523" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="cli-6m-dKP" kind="show" id="Uj6-aQ-LCt"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6t6-5g-uKT">
+                                <rect key="frame" x="41" y="347" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="IHz-Gk-QLM"/>
+                                    <constraint firstAttribute="height" constant="128" id="VcY-24-qwB"/>
+                                </constraints>
+                                <string key="text">For hundreds of years I’ve held my tongue, but no longer.
+
+Come child, hear my story. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NHY-OY-SU2" firstAttribute="top" secondItem="iM3-RB-y2a" secondAttribute="bottom" constant="47" id="8u2-Fc-y4O"/>
+                            <constraint firstItem="6t6-5g-uKT" firstAttribute="leading" secondItem="31B-dl-D18" secondAttribute="leadingMargin" constant="21" id="UJi-YW-Hhx"/>
+                            <constraint firstItem="gv3-E6-sYw" firstAttribute="top" secondItem="58g-ui-ON9" secondAttribute="bottom" constant="8" symbolic="YES" id="Xp9-bK-AZ8"/>
+                            <constraint firstItem="gv3-E6-sYw" firstAttribute="leading" secondItem="31B-dl-D18" secondAttribute="leadingMargin" constant="14" id="aim-w4-s0b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iM3-RB-y2a" secondAttribute="trailing" constant="44" id="jfu-Mu-QBb"/>
+                            <constraint firstItem="NHY-OY-SU2" firstAttribute="top" secondItem="6t6-5g-uKT" secondAttribute="bottom" constant="125" id="uSq-ao-Jbh"/>
+                            <constraint firstItem="6t6-5g-uKT" firstAttribute="top" secondItem="gv3-E6-sYw" secondAttribute="bottom" constant="25" id="xJK-q9-Oco"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medusa's Story" id="rRw-h3-KFX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNd-cU-LmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="629" y="597"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eF7-Z1-MTm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ucg-dx-ZbU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ayc-Nr-rqu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QPN-RF-lnD" kind="relationship" relationship="rootViewController" id="qsN-Lt-r7Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srn-N1-Fbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="-258"/>
+        </scene>
+        <!--body-->
+        <scene sceneID="AmD-tS-lnz">
+            <objects>
+                <viewController title="body" id="WQU-oL-pxw" customClass="body" customModule="prato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rbu-9Y-pkL"/>
+                        <viewControllerLayoutGuide type="bottom" id="qcI-xd-WSa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oo2-1i-ymv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="78K-x0-EVo">
+                                <rect key="frame" x="30" y="78" width="289" height="253"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="Dri-zc-qYY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebi-gn-cmQ">
+                                <rect key="frame" x="548" y="538" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="4wp-we-Ctd" kind="show" id="txA-4a-0B5"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm4-rh-RS6">
+                                <rect key="frame" x="30" y="380" width="501" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="r7b-RY-snY"/>
+                                </constraints>
+                                <string key="text">I wasn’t always like this you know…not bodiless but…hideous. *sigh
+
+I look back fondly to the days of my youth..I was once a human..like you..
+
+As a priestess, my life was devoted to the goddess Minerva and I swore a life of celibacy. 
+
+I was not interested in the life of normal men or women nor was I to engage in many of their daily activities so I could devote my time to serving Minerva.
+
+I took pride in the way I looked. The ravishing beauty I possessed caused some to be envious and others to desire me. It even gained the attention of the gods..
+
+Perhaps I was rather narcissistic and conceited with my own looks, however I was true to my duties as a priestess and my worship of Minerva. 
+
+My beauty attracted the lustful eyes of the god Neptune (lord of the sea, brother of Jupiter). 
+
+Devoted to my goddess I worshiped obediently daily in her temple. 
+
+Enthralled by my beauty Neptune, the old man, the stinking breath, the sweaty weight, sized and raped me before Minerva’s altar.
+
+I did everything I could to escape the determined god, but to no avail. The high god overpowered me, and took my innocence. [emotion]
+
+Like forcing a branch and ripping the tree, I was twisted by fury that I did not choose. 
+My body was no longer mine, my life of celibacy and devotion ripped away by a god. 
+
+And Minerva the virgin goddess (daughter of Jupiter), whom I’ve dedicated my life to serving, whose temple I took refuge, did nothing to protect nor comfort me, her devote priestess. 
+
+Neither did she try hold the god Neptune accountable for his actions. Instead she started yelling in a furious rage. 
+
+Frightened, shaking and in tears I was punished for being raped in her temple. 
+
+No longer a virgin and stripped of my priestess title I was forced into a future I did not choose.
+
+However, her vengeance did not end there. Enraged, Minerva whom I have served so devoutly punished me 
+
+Without warning my teeth began to rot, my delicate skin grew loose and scales started forming, my golden locks fell out as live serpents protruded from my scalp biting at my shoulders and piercing my flesh as my human figure lost its shape forming…into something else. 
+
+My hair coiled in fury, my mind held hate and hate alone. I thought only of revenge and began to live on it. My hair, turned into serpents and my eyes, saw the world in stone. 
+
+But this was not the full extent of my punishment. My dear sisters, who were not involved in this were cursed into the same monstrous form. 
+
+My body was lost, my life was gone, I was punished for being raped by a god. I was a victim. And so were my beloved sisters.
+
+Exiled from the world, we spent the remaining time confined in a cave surrounded by statues. Our very gaze would turn living things into stone. 
+
+My anger did not subside, but feelings of depression and loneliness crept in. I..We could no longer live normal lives, but instead were out casted and hunted. 
+
+Never could we feel the warm embrace of the simplest luxuries of life, a bed to sleep in, bread to eat even glancing at an animal out of interest would suck the life from it. Our lives became meaningless, barring our hatred of men and the gods.  
+
+You may wonder how I didn’t go insane. Sometimes I wonder that too.
+
+I never accepted that a woman with such beauty as myself could be subjected to a life such un-fulfillment and darkness. 
+
+Days to months and months to years, we continued existing in this state. 
+
+Minerva actions continued to toy with my life.
+
+[laugh] The great hero [sarcasm] Perseus would have been another one of my statues had he not been looked on so favorably by the gods.  
+
+Given winged sandals from Mercury and a mirrored shield from Minerva herself, the demigod Perseus was well equipped. 
+
+Perhaps I am glad I was decapitated, it ended my miserable existence in exile and my powers still flow through my gaze. It has also allowed me to tell you my story. 
+
+So child…do you believe in the gods? Do you believe in they could commit such atrocities without consequence and paint me as the bad guy?
+
+I lived a devote and meaningful life before their intervention. And how was I to become anything else once I was transformed into a gorgon. 
+
+They will never see the beauty behind my mask. They will never see that I was just a young woman who had hopes and ambitions just like they had. I was an innocent victim.  And so were my sisters.
+
+So what do you think, were the gods actions justified. 
+
+Choose wisely…remember my powers still flows within.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="78K-x0-EVo" firstAttribute="leading" secondItem="Vm4-rh-RS6" secondAttribute="leading" id="0cc-ad-yjb"/>
+                            <constraint firstItem="qcI-xd-WSa" firstAttribute="top" secondItem="Ebi-gn-cmQ" secondAttribute="bottom" constant="32" id="G09-qp-eRw"/>
+                            <constraint firstItem="qcI-xd-WSa" firstAttribute="top" secondItem="Vm4-rh-RS6" secondAttribute="bottom" constant="37" id="KER-tP-xTQ"/>
+                            <constraint firstItem="78K-x0-EVo" firstAttribute="top" secondItem="Rbu-9Y-pkL" secondAttribute="bottom" constant="14" id="Qal-Hh-hVe"/>
+                            <constraint firstItem="Ebi-gn-cmQ" firstAttribute="trailing" secondItem="Oo2-1i-ymv" secondAttribute="trailingMargin" id="QyL-dZ-eFT"/>
+                            <constraint firstItem="78K-x0-EVo" firstAttribute="leading" secondItem="Oo2-1i-ymv" secondAttribute="leadingMargin" constant="10" id="eXd-hV-Nl5"/>
+                            <constraint firstItem="Vm4-rh-RS6" firstAttribute="top" secondItem="78K-x0-EVo" secondAttribute="bottom" constant="49" id="n9p-uU-WUM"/>
+                            <constraint firstItem="Ebi-gn-cmQ" firstAttribute="leading" secondItem="Vm4-rh-RS6" secondAttribute="trailing" constant="17" id="rD9-VI-b0x"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medusa's story" id="BXN-eG-s1J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ft4-GN-i4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="3948"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fpX-An-UAz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xze-QN-OxR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jJC-lP-XTn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WQU-oL-pxw" kind="relationship" relationship="rootViewController" id="dMU-28-NnW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJn-c4-6WA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="3202"/>
+        </scene>
+        <!--Q2Judgement-->
+        <scene sceneID="RHS-wa-qgb">
+            <objects>
+                <viewController title="Q2Judgement" id="4wp-we-Ctd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jGI-Il-YJN"/>
+                        <viewControllerLayoutGuide type="bottom" id="7ok-gp-ieb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7tv-A5-pLH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuE-r3-wkq">
+                                <rect key="frame" x="223" y="473" width="30" height="30"/>
+                                <state key="normal" title="Yes"/>
+                                <connections>
+                                    <segue destination="1xK-oK-g8r" kind="show" id="upK-qZ-opd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEO-GV-IUY">
+                                <rect key="frame" x="28" y="526" width="75" height="30"/>
+                                <state key="normal" title="Undecided"/>
+                                <connections>
+                                    <segue destination="1xK-oK-g8r" kind="show" id="jjG-xs-Kt7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGQ-fo-Kjd">
+                                <rect key="frame" x="28" y="473" width="30" height="30"/>
+                                <state key="normal" title="No"/>
+                                <connections>
+                                    <segue destination="HW1-7O-rrS" kind="show" id="kAu-jr-v1t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJX-Hu-85A">
+                                <rect key="frame" x="28" y="349" width="207" height="21"/>
+                                <string key="text">So what do you think, were 
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4Medusa_eyesOpened.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4D-kF-Sns">
+                                <rect key="frame" x="20" y="72" width="207" height="236"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="the gods actions justified. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfA-RR-RZg">
+                                <rect key="frame" x="28" y="399" width="202" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medusa's story" id="oy7-xA-cGX"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fau-Fg-sYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2619" y="4240"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v92-GB-rV8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="82L-6E-w6q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wUs-K5-Hx2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4wp-we-Ctd" kind="relationship" relationship="rootViewController" id="9qh-ag-o55"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OZX-pJ-3hI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2619" y="3470"/>
+        </scene>
+        <!--q2_no-->
+        <scene sceneID="UQ6-Xf-RMd">
+            <objects>
+                <viewController title="q2_no" id="HW1-7O-rrS" customClass="Q2_no" customModule="prato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U7y-4m-xrF"/>
+                        <viewControllerLayoutGuide type="bottom" id="cSg-8r-iBe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HkB-N2-MHr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2cH-up-qUI">
+                                <rect key="frame" x="32" y="110" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FuF-Df-h2Y"/>
+                                    <constraint firstAttribute="width" constant="240" id="vVL-Me-yy1"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hal-dC-pbc">
+                                <rect key="frame" x="32" y="306" width="245" height="151"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="8up-Wp-1wm"/>
+                                    <constraint firstAttribute="width" constant="347" id="gu8-iY-uE2"/>
+                                </constraints>
+                                <string key="text">Curse the gods for what they did, but perhaps we need to let go to move on…I am tired and can finally rest now that I have shared my story with another. Thank you my child.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2cH-up-qUI" firstAttribute="top" secondItem="U7y-4m-xrF" secondAttribute="bottom" constant="46" id="Of3-u7-loy"/>
+                            <constraint firstItem="2cH-up-qUI" firstAttribute="leading" secondItem="HkB-N2-MHr" secondAttribute="leadingMargin" constant="12" id="nW0-xN-3Z9"/>
+                            <constraint firstItem="2cH-up-qUI" firstAttribute="leading" secondItem="hal-dC-pbc" secondAttribute="leading" id="sKL-0u-rsg"/>
+                            <constraint firstItem="cSg-8r-iBe" firstAttribute="top" secondItem="hal-dC-pbc" secondAttribute="bottom" constant="81" id="ygR-Uw-sf5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medusa's story" id="bPq-CH-MoJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMp-nn-GMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="5628"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tro-Lk-GZ2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vOE-Xa-0aY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bUH-vs-iB2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HW1-7O-rrS" kind="relationship" relationship="rootViewController" id="T0v-kR-jZe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BE8-D4-2gE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="4834"/>
+        </scene>
+        <!--q1_unsure-->
+        <scene sceneID="TJI-Hq-L7d">
+            <objects>
+                <viewController title="q1_unsure" id="gOS-Zs-wVM" customClass="q1_unsure" customModule="prato" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aCj-Ta-2si"/>
+                        <viewControllerLayoutGuide type="bottom" id="AIx-gU-97q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XNe-qp-3oO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AKu-9I-bEk">
+                                <rect key="frame" x="46" y="102" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="IFJ-1k-jFE"/>
+                                    <constraint firstAttribute="width" constant="240" id="e9t-EI-gOr"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-Ig-GjP">
+                                <rect key="frame" x="541" y="562" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="WQU-oL-pxw" kind="show" id="TsU-K0-Dae"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b77-lo-hfh">
+                                <rect key="frame" x="46" y="325" width="308" height="166"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="gNB-AM-uoi"/>
+                                </constraints>
+                                <string key="text">Then listen to my story, it may convince you..one way or another...
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AKu-9I-bEk" firstAttribute="top" secondItem="aCj-Ta-2si" secondAttribute="bottom" constant="38" id="3HR-pD-ldP"/>
+                            <constraint firstItem="b77-lo-hfh" firstAttribute="top" secondItem="AKu-9I-bEk" secondAttribute="bottom" constant="95" id="9Ya-di-aEr"/>
+                            <constraint firstItem="AIx-gU-97q" firstAttribute="top" secondItem="3Yk-Ig-GjP" secondAttribute="bottom" constant="8" symbolic="YES" id="DFh-dj-08b"/>
+                            <constraint firstItem="AKu-9I-bEk" firstAttribute="leading" secondItem="XNe-qp-3oO" secondAttribute="leadingMargin" constant="26" id="GGH-tn-jb8"/>
+                            <constraint firstItem="AIx-gU-97q" firstAttribute="top" secondItem="b77-lo-hfh" secondAttribute="bottom" constant="109" id="KfL-SO-ax3"/>
+                            <constraint firstItem="AKu-9I-bEk" firstAttribute="leading" secondItem="b77-lo-hfh" secondAttribute="leading" id="LaK-WO-8H4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Yk-Ig-GjP" secondAttribute="trailing" constant="7" id="jlj-gy-Ns5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WyO-1b-ngc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFf-21-QiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3928" y="2575"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0tK-VQ-G0P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pde-vT-eFn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Hn-Da-31H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gOS-Zs-wVM" kind="relationship" relationship="rootViewController" id="hGe-32-RQ6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpp-Vd-rV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3938" y="1685"/>
+        </scene>
+        <!--q2_yes-->
+        <scene sceneID="0gF-oW-hNP">
+            <objects>
+                <viewController title="q2_yes" id="1xK-oK-g8r" customClass="Q2_Yes" customModule="prato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XjW-y7-XZN"/>
+                        <viewControllerLayoutGuide type="bottom" id="HbU-RQ-y4V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZnE-qZ-Wpr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t7n-TO-ZOj">
+                                <rect key="frame" x="52" y="108" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="0uh-aA-BKR"/>
+                                    <constraint firstAttribute="height" constant="128" id="rrq-j0-3ln"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-gQ-Rt0">
+                                <rect key="frame" x="52" y="370" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="ddP-6s-Gox"/>
+                                    <constraint firstAttribute="height" constant="128" id="x4k-Fy-sdx"/>
+                                </constraints>
+                                <string key="text">Hmmmm, it is a matter of perspective isn’t it, nevertheless it felt good sharing my story with another. I can now rest…
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m0k-X2-gNs">
+                                <rect key="frame" x="226" y="15" width="120" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TXf-gQ-Rt0" firstAttribute="leading" secondItem="ZnE-qZ-Wpr" secondAttribute="leadingMargin" constant="9" id="84m-53-fJ6"/>
+                            <constraint firstItem="t7n-TO-ZOj" firstAttribute="leading" secondItem="ZnE-qZ-Wpr" secondAttribute="leadingMargin" constant="32" id="LG6-Jt-ash"/>
+                            <constraint firstItem="t7n-TO-ZOj" firstAttribute="top" secondItem="XjW-y7-XZN" secondAttribute="bottom" constant="44" id="esk-lZ-K8q"/>
+                            <constraint firstItem="HbU-RQ-y4V" firstAttribute="top" secondItem="TXf-gQ-Rt0" secondAttribute="bottom" constant="38" id="qme-j0-CcI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RHo-4r-97r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QXf-Et-rur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3542" y="5814"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X64-Rz-HwY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vmx-D3-VnP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A3N-GP-ZSP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1xK-oK-g8r" kind="relationship" relationship="rootViewController" id="Qam-fY-ZUF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wq6-g0-9Ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3574" y="4846"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1.gif" width="484" height="360"/>
+        <image name="4Medusa_eyesOpened.png" width="519" height="659"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gFs-Sz-C1O"/>
+        <segue reference="Uj6-aQ-LCt"/>
+        <segue reference="MR6-5Y-1fX"/>
+        <segue reference="PG0-ly-8Bw"/>
+        <segue reference="Wig-wF-c0w"/>
+        <segue reference="upK-qZ-opd"/>
+        <segue reference="txA-4a-0B5"/>
+        <segue reference="TsU-K0-Dae"/>
+        <segue reference="hGe-32-RQ6"/>
+        <segue reference="kAu-jr-v1t"/>
+    </inferredMetricsTieBreakers>
+</document>
